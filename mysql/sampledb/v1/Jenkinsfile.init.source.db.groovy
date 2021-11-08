@@ -7,8 +7,11 @@ pipeline {
         stage('Init source db') {
             steps {
                 sh 'mysql --version'
+                sh 'pwd'
+                sh 'ls -al'
                 sh 'echo MYSQL_SRC_HOST=${MYSQL_SRC_HOST}'
                 sh 'echo MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}'
+                sh 'mysql -h ${MYSQL_SRC_HOST} -u root -p${MYSQL_ROOT_PASSWORD} -P3306 -e "SELECT 1+1"'
                 sh 'mysql -h ${MYSQL_SRC_HOST} -u root -p${MYSQL_ROOT_PASSWORD} -P3306 -e "SELECT 1+1"'
             }
         }
