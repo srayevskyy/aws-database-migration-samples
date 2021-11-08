@@ -4,7 +4,7 @@ pipeline {
         stage('Init source db') {
             steps {
                 sh 'mysql --version'
-                sh 'echo $PATH'
+                sh 'echo MYSQL_SRC_HOST=${MYSQL_SRC_HOST}'
             }
         }
     }
