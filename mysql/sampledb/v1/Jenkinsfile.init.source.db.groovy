@@ -7,9 +7,7 @@ pipeline {
         stage('Init source db') {
             steps {
                 dir('mysql/sampledb/v1') {
-                    sh "pwd"
-                    sh 'ls -al'
-                    sh 'mysql -h ${MYSQL_SRC_HOST} -u root -p${MYSQL_ROOT_PASSWORD} < install-rds.sql'
+                    sh 'mysql -v -h ${MYSQL_SRC_HOST} -u root -p${MYSQL_ROOT_PASSWORD} < install-rds.sql'
                 }
             }
         }
