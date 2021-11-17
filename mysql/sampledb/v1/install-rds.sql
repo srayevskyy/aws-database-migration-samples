@@ -41,7 +41,7 @@ source ./user/dms_user_privileges.sql
 #############################
 # RDS Specific commands
 #############################
-call mysql.rds_set_configuration('binlog retention hours',8);
+# call mysql.rds_set_configuration('binlog retention hours',8);
 
 
 ############################
